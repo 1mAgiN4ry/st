@@ -3469,7 +3469,7 @@ xsetcursor(int cursor)
 	win.cursor = (cursor ? cursor : cursorshape);
 	#endif // BLINKING_CURSOR_PATCH
 	#else
-	win.cursor = cursor;
+	win.cursor = cursor ? cursor: cursorstyle;
 	#endif // DEFAULT_CURSOR_PATCH
 	#if BLINKING_CURSOR_PATCH
 	cursorblinks = win.cursor == 0 || win.cursor == 1 ||
